@@ -20,6 +20,7 @@ static const uint8_t LEN_TO_DATA_FRAME = 9;
 
 static const uint8_t FRAME_HEADER_BUFFER = 0x01;
 static const uint16_t UNKNOWN_TYPE_BUFFER = 0x0A13;
+static const uint16_t UNKNOWN2_TYPE_BUFFER = 0x0100;
 static const uint16_t BREATH_RATE_TYPE_BUFFER = 0x0A14;
 static const uint16_t HEART_RATE_TYPE_BUFFER = 0x0A15;
 static const uint16_t DISTANCE_TYPE_BUFFER = 0x0A16;
