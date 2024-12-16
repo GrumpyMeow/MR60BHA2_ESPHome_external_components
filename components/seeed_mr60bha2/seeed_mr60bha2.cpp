@@ -94,7 +94,7 @@ bool MR60BHA2Component::validate_message_() {
   uint16_t frame_type = encode_uint16(data[5], data[6]);
 
   if (frame_type != BREATH_RATE_TYPE_BUFFER && frame_type != HEART_RATE_TYPE_BUFFER &&
-      frame_type != DISTANCE_TYPE_BUFFER) {
+      frame_type != DISTANCE_TYPE_BUFFER && frame_type != UNKNOWN_TYPE_BUFFER) {
     ESP_LOGE(TAG, "UNKNOWN FRAME TYPE: %s", format_hex_pretty(data, 8).c_str());
     return false;
   }
@@ -164,6 +164,8 @@ void MR60BHA2Component::process_frame_(uint16_t frame_id, uint16_t frame_type, c
           this->distance_sensor_->publish_state(distance_float);
         }
       }
+      break;
+    case UNKNOWN_TYPE_BUFFER:
       break;
     default:
       break;
