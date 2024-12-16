@@ -168,8 +168,6 @@ void MR60BHA2Component::process_frame_(uint16_t frame_id, uint16_t frame_type, c
     case UNKNOWN_TYPE_BUFFER:
       break;
     case UNKNOWN2_TYPE_BUFFER:
-      std::string message = data.substr(8, length);
-      ESP_LOGV(TAG, "Message: %s", message.c_str());
       break;
     default:
       break;
