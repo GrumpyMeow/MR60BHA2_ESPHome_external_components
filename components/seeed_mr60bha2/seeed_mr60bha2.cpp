@@ -95,6 +95,7 @@ bool MR60BHA2Component::validate_message_() {
 
   if (frame_type != BREATH_RATE_TYPE_BUFFER && frame_type != HEART_RATE_TYPE_BUFFER &&
       frame_type != DISTANCE_TYPE_BUFFER) {
+    ESP_LOGE(TAG, "UNKNOWN FRAME TYPE: %s", format_hex_pretty(data, 8).c_str());
     return false;
   }
 
