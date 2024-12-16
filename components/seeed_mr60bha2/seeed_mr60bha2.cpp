@@ -31,7 +31,7 @@ void MR60BHA2Component::loop() {
       this->rx_message_.clear();
     }
   }
-  delay(1);
+  yield();
 }
 
 /**
